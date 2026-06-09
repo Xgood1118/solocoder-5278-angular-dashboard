@@ -16,13 +16,13 @@ import {
   OverlayModule
 } from "./chunk-FOBW4AEC.js";
 import {
-  NzConfigService,
-  isPresetColor
-} from "./chunk-LSRBXSW2.js";
-import {
   NzOutletModule,
   NzStringTemplateOutletDirective
 } from "./chunk-NROO6RSP.js";
+import {
+  NzConfigService,
+  isPresetColor
+} from "./chunk-LSRBXSW2.js";
 import {
   InputBoolean,
   isNotNil,

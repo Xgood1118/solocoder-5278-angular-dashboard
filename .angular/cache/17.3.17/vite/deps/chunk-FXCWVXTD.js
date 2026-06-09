@@ -21,13 +21,13 @@ import {
   RouterLink
 } from "./chunk-3MIJBNAN.js";
 import {
-  NzIconDirective,
-  NzIconModule
-} from "./chunk-IFO7ATFL.js";
-import {
   NzOutletModule,
   NzStringTemplateOutletDirective
 } from "./chunk-NROO6RSP.js";
+import {
+  NzIconDirective,
+  NzIconModule
+} from "./chunk-ME6SCOT7.js";
 import {
   InputBoolean
 } from "./chunk-VIDVLXHN.js";
@@ -1969,4 +1969,4 @@ export {
   NzMenuDividerDirective,
   NzMenuModule
 };
-//# sourceMappingURL=chunk-LHOG6KGO.js.map
+//# sourceMappingURL=chunk-FXCWVXTD.js.map

@@ -2,7 +2,7 @@ import {
   NzOptionComponent,
   NzSelectComponent,
   NzSelectModule
-} from "./chunk-SA4EFKRR.js";
+} from "./chunk-HAZBBU55.js";
 import {
   NzI18nService
 } from "./chunk-S4ZEFHRH.js";
@@ -14,7 +14,7 @@ import {
 import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
 import {
   NzConfigService,
   WithConfig
@@ -1640,4 +1640,4 @@ export {
   NzPaginationComponent,
   NzPaginationModule
 };
-//# sourceMappingURL=chunk-7F6UYFBW.js.map
+//# sourceMappingURL=chunk-H4ILKB52.js.map

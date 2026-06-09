@@ -1,7 +1,8 @@
 import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
+import "./chunk-5QBFNWJX.js";
 import {
   isPresetColor,
   isStatusColor,

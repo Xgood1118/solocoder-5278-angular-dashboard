@@ -2,7 +2,7 @@ import {
   NzMNComponent,
   NzMNContainerComponent,
   NzMNService
-} from "./chunk-2AXISTTC.js";
+} from "./chunk-Z2CQU4LA.js";
 import {
   notificationMotion
 } from "./chunk-RQ6A3ELO.js";
@@ -11,17 +11,18 @@ import {
   Overlay
 } from "./chunk-FOBW4AEC.js";
 import {
+  NzOutletModule,
+  NzStringTemplateOutletDirective
+} from "./chunk-NROO6RSP.js";
+import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
+import "./chunk-5QBFNWJX.js";
 import {
   NzConfigService
 } from "./chunk-LSRBXSW2.js";
 import "./chunk-5BZR2V47.js";
-import {
-  NzOutletModule,
-  NzStringTemplateOutletDirective
-} from "./chunk-NROO6RSP.js";
 import {
   toCssPixel
 } from "./chunk-VIDVLXHN.js";

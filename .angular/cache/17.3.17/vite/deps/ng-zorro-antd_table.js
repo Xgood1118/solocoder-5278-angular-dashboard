@@ -1,12 +1,12 @@
 import {
   NzPaginationComponent,
   NzPaginationModule
-} from "./chunk-7F6UYFBW.js";
+} from "./chunk-H4ILKB52.js";
 import {
   NzEmbedEmptyComponent,
   NzEmptyModule,
   NzFormStatusService
-} from "./chunk-SA4EFKRR.js";
+} from "./chunk-HAZBBU55.js";
 import {
   NzI18nService
 } from "./chunk-S4ZEFHRH.js";
@@ -14,11 +14,21 @@ import {
   NzDropDownDirective,
   NzDropDownModule,
   NzDropdownMenuComponent
-} from "./chunk-BT6JODL3.js";
+} from "./chunk-LQH3WBXF.js";
+import {
+  NzButtonComponent,
+  NzButtonModule
+} from "./chunk-E7BESWDZ.js";
+import {
+  NzWaveDirective
+} from "./chunk-SW22VAIQ.js";
+import {
+  NzTransitionPatchDirective
+} from "./chunk-AHHI3LRL.js";
 import {
   NzMenuDirective,
   NzMenuItemComponent
-} from "./chunk-LHOG6KGO.js";
+} from "./chunk-FXCWVXTD.js";
 import "./chunk-NM74CWHD.js";
 import "./chunk-NRLF7FKY.js";
 import "./chunk-RQ6A3ELO.js";
@@ -28,28 +38,19 @@ import {
 } from "./chunk-FOBW4AEC.js";
 import "./chunk-3MIJBNAN.js";
 import {
-  NzButtonComponent,
-  NzButtonModule
-} from "./chunk-2YPXS4PR.js";
+  NzOutletModule,
+  NzStringTemplateOutletDirective
+} from "./chunk-NROO6RSP.js";
 import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
+import "./chunk-5QBFNWJX.js";
 import {
   NzConfigService,
   WithConfig
 } from "./chunk-LSRBXSW2.js";
 import "./chunk-5BZR2V47.js";
-import {
-  NzTransitionPatchDirective
-} from "./chunk-AHHI3LRL.js";
-import {
-  NzWaveDirective
-} from "./chunk-SW22VAIQ.js";
-import {
-  NzOutletModule,
-  NzStringTemplateOutletDirective
-} from "./chunk-NROO6RSP.js";
 import {
   InputBoolean,
   InputNumber,

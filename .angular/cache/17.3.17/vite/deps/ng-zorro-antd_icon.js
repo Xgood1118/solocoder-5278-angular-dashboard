@@ -8,7 +8,8 @@ import {
   NzIconModule,
   NzIconPatchService,
   NzIconService
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
+import "./chunk-5QBFNWJX.js";
 import "./chunk-LSRBXSW2.js";
 import "./chunk-5BZR2V47.js";
 import "./chunk-VIDVLXHN.js";

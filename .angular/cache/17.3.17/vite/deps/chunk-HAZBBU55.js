@@ -26,17 +26,17 @@ import {
   reqAnimFrame
 } from "./chunk-FOBW4AEC.js";
 import {
+  NzOutletModule,
+  NzStringTemplateOutletDirective
+} from "./chunk-NROO6RSP.js";
+import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
 import {
   NzConfigService,
   WithConfig
 } from "./chunk-LSRBXSW2.js";
-import {
-  NzOutletModule,
-  NzStringTemplateOutletDirective
-} from "./chunk-NROO6RSP.js";
 import {
   InputBoolean,
   getStatusClassNames,
@@ -4071,4 +4071,4 @@ export {
   NzSelectComponent,
   NzSelectModule
 };
-//# sourceMappingURL=chunk-SA4EFKRR.js.map
+//# sourceMappingURL=chunk-HAZBBU55.js.map

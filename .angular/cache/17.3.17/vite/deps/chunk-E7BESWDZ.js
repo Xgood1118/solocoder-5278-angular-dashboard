@@ -1,17 +1,17 @@
 import {
-  NzIconDirective,
-  NzIconModule
-} from "./chunk-IFO7ATFL.js";
-import {
-  NzConfigService,
-  WithConfig
-} from "./chunk-LSRBXSW2.js";
+  NzWaveModule
+} from "./chunk-SW22VAIQ.js";
 import {
   NzTransitionPatchModule
 } from "./chunk-AHHI3LRL.js";
 import {
-  NzWaveModule
-} from "./chunk-SW22VAIQ.js";
+  NzIconDirective,
+  NzIconModule
+} from "./chunk-ME6SCOT7.js";
+import {
+  NzConfigService,
+  WithConfig
+} from "./chunk-LSRBXSW2.js";
 import {
   InputBoolean
 } from "./chunk-VIDVLXHN.js";
@@ -430,4 +430,4 @@ export {
   NzButtonGroupComponent,
   NzButtonModule
 };
-//# sourceMappingURL=chunk-2YPXS4PR.js.map
+//# sourceMappingURL=chunk-E7BESWDZ.js.map

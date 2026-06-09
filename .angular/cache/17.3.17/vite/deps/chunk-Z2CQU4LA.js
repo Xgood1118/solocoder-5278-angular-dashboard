@@ -7,16 +7,16 @@ import {
   Overlay
 } from "./chunk-FOBW4AEC.js";
 import {
-  NzIconDirective,
-  NzIconModule
-} from "./chunk-IFO7ATFL.js";
-import {
-  NzConfigService
-} from "./chunk-LSRBXSW2.js";
-import {
   NzOutletModule,
   NzStringTemplateOutletDirective
 } from "./chunk-NROO6RSP.js";
+import {
+  NzIconDirective,
+  NzIconModule
+} from "./chunk-ME6SCOT7.js";
+import {
+  NzConfigService
+} from "./chunk-LSRBXSW2.js";
 import {
   toCssPixel
 } from "./chunk-VIDVLXHN.js";
@@ -702,4 +702,4 @@ export {
   NzMessageModule,
   NzMessageService
 };
-//# sourceMappingURL=chunk-2AXISTTC.js.map
+//# sourceMappingURL=chunk-Z2CQU4LA.js.map

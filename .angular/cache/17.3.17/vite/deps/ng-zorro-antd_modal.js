@@ -2,6 +2,16 @@ import {
   NzI18nService
 } from "./chunk-S4ZEFHRH.js";
 import {
+  NzButtonComponent,
+  NzButtonModule
+} from "./chunk-E7BESWDZ.js";
+import {
+  NzWaveDirective
+} from "./chunk-SW22VAIQ.js";
+import {
+  NzTransitionPatchDirective
+} from "./chunk-AHHI3LRL.js";
+import {
   overlayZIndexSetter
 } from "./chunk-NRLF7FKY.js";
 import {
@@ -16,27 +26,18 @@ import {
   reqAnimFrame
 } from "./chunk-FOBW4AEC.js";
 import {
-  NzButtonComponent,
-  NzButtonModule
-} from "./chunk-2YPXS4PR.js";
+  NzOutletModule,
+  NzStringTemplateOutletDirective
+} from "./chunk-NROO6RSP.js";
 import {
   NzIconDirective,
   NzIconModule
-} from "./chunk-IFO7ATFL.js";
+} from "./chunk-ME6SCOT7.js";
+import "./chunk-5QBFNWJX.js";
 import {
   NzConfigService
 } from "./chunk-LSRBXSW2.js";
 import "./chunk-5BZR2V47.js";
-import {
-  NzTransitionPatchDirective
-} from "./chunk-AHHI3LRL.js";
-import {
-  NzWaveDirective
-} from "./chunk-SW22VAIQ.js";
-import {
-  NzOutletModule,
-  NzStringTemplateOutletDirective
-} from "./chunk-NROO6RSP.js";
 import {
   InputBoolean,
   getElementOffset,

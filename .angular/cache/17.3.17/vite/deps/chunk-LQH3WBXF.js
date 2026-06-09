@@ -1,8 +1,11 @@
 import {
+  NzButtonGroupComponent
+} from "./chunk-E7BESWDZ.js";
+import {
   MenuService,
   NzIsMenuInsideDropDownToken,
   NzMenuModule
-} from "./chunk-LHOG6KGO.js";
+} from "./chunk-FXCWVXTD.js";
 import {
   NzNoAnimationDirective
 } from "./chunk-NM74CWHD.js";
@@ -17,9 +20,6 @@ import {
   Overlay,
   TemplatePortal
 } from "./chunk-FOBW4AEC.js";
-import {
-  NzButtonGroupComponent
-} from "./chunk-2YPXS4PR.js";
 import {
   NzConfigService,
   WithConfig
@@ -748,4 +748,4 @@ export {
   NzDropDownModule,
   NzContextMenuService
 };
-//# sourceMappingURL=chunk-BT6JODL3.js.map
+//# sourceMappingURL=chunk-LQH3WBXF.js.map
