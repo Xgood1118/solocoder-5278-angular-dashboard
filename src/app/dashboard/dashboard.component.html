@@ -1,0 +1,159 @@
+<div class="dashboard-page">
+  <header class="dashboard-header">
+    <div class="header-left">
+      <div class="logo">
+        <i nz-icon nzType="dashboard" nzTheme="outline"></i>
+        <span>Dashboard Pro</span>
+      </div>
+      
+      <nz-select 
+        class="layout-selector" 
+        [ngModel]="activeLayout?.id" 
+        (ngModelChange)="selectLayout($event)"
+        nzSize="small"
+        style="width: 160px; margin-left: 16px;"
+      >
+        <nz-option *ngFor="let layout of layouts" [nzValue]="layout.id" [nzLabel]="layout.name"></nz-option>
+      </nz-select>
+      
+      <button nz-button nzType="text" nzSize="small" (click)="createNewLayout()" style="margin-left: 8px;">
+        <i nz-icon nzType="plus"></i>
+        新建
+      </button>
+    </div>
+
+    <div class="header-center">
+      <nz-select 
+        class="template-selector" 
+        nzPlaceHolder="选择模板"
+        (ngModelChange)="applyTemplate($event)"
+        nzSize="small"
+        style="width: 160px;"
+        [ngModel]="null"
+      >
+        <nz-option-group nzLabel="可用模板">
+          <nz-option 
+            *ngFor="let tpl of templates" 
+            [nzValue]="tpl.id" 
+            [nzLabel]="tpl.name"
+          ></nz-option>
+        </nz-option-group>
+      </nz-select>
+    </div>
+
+    <div class="header-right">
+      <div class="header-actions">
+        <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="刷新全部" (click)="refreshAll()">
+          <i nz-icon nzType="reload"></i>
+        </button>
+
+        <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="添加卡片" nz-dropdown nzTrigger="click" [nzDropdownMenu]="addWidgetMenu">
+            <i nz-icon nzType="plus"></i>
+            <span style="margin-left: 4px;">添加</span>
+          </button>
+          <nz-dropdown-menu #addWidgetMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item *ngFor="let wt of widgetTypes" (click)="addWidget(wt.type)">
+                <i nz-icon [nzType]="wt.icon" style="margin-right: 8px; width: 16px;"></i>
+                {{ wt.label }}
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+
+        <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="导出" nz-dropdown nzTrigger="click" [nzDropdownMenu]="exportMenu">
+            <i nz-icon nzType="export"></i>
+            <span style="margin-left: 4px;">导出</span>
+          </button>
+          <nz-dropdown-menu #exportMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)="exportDashboardPdf()">
+                <i nz-icon nzType="file-pdf" style="margin-right: 8px;"></i>
+                导出 PDF
+              </li>
+              <li nz-menu-item>
+                <i nz-icon nzType="file-excel" style="margin-right: 8px;"></i>
+                导出 Excel
+              </li>
+              <li nz-menu-item>
+                <i nz-icon nzType="picture" style="margin-right: 8px;"></i>
+                导出图片
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+
+        <nz-divider nzType="vertical" style="margin: 0 8px;"></nz-divider>
+
+        <button nz-button nzType="text" nzSize="small" nz-tooltip [nzTooltipTitle]="themeMode === 'light' ? '深色模式' : '浅色模式'" (click)="toggleTheme()">
+          <i nz-icon [nzType]="themeMode === 'light' ? 'bulb' : 'bulb'" [nzTheme]="themeMode === 'dark' ? 'fill' : 'outline'"></i>
+        </button>
+
+        <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="显示密度" nz-dropdown nzTrigger="click" [nzDropdownMenu]="densityMenu">
+            <i nz-icon nzType="column-height"></i>
+          </button>
+          <nz-dropdown-menu #densityMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item (click)="setDensity('compact')">
+                <span [style.font-weight]="themeDensity === 'compact' ? '600' : 'normal'">紧凑模式</span>
+              </li>
+              <li nz-menu-item (click)="setDensity('comfortable')">
+                <span [style.font-weight]="themeDensity === 'comfortable' ? '600' : 'normal'">宽松模式</span>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+
+        <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="主题色" nz-dropdown nzTrigger="click" [nzDropdownMenu]="accentMenu">
+            <span class="accent-dot" [style.background]="currentAccentColor"></span>
+          </button>
+          <nz-dropdown-menu #accentMenu="nzDropdownMenu">
+            <div class="accent-picker">
+              <div class="accent-grid">
+                <button 
+                  *ngFor="let c of accentColors" 
+                  class="accent-btn"
+                  [style.background]="c.color"
+                  [class.active]="accentColor === c.value"
+                  (click)="setAccent(c.value)"
+                ></button>
+              </div>
+            </div>
+          </nz-dropdown-menu>
+
+        <nz-divider nzType="vertical" style="margin: 0 8px;"></nz-divider>
+
+        <div class="user-info" nz-dropdown nzTrigger="click" [nzDropdownMenu]="userMenu">
+            <nz-avatar [nzSize]="28" nzIcon="user" style="margin-right: 8px;"></nz-avatar>
+            <span class="user-name">{{ currentUser?.name || '未登录' }}</span>
+            <i nz-icon nzType="down" style="margin-left: 4px; font-size: 12px;"></i>
+          </div>
+          <nz-dropdown-menu #userMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-divider></li>
+              <li nz-menu-group nzTitle="切换角色（演示）">
+                <ul>
+                  <li nz-menu-item *ngFor="let user of mockUsers" (click)="switchUser(user.id)">
+                    <span [style.font-weight]="currentUser?.id === user.id ? '600' : 'normal'">
+                      {{ user.name }}
+                    </span>
+                    <nz-tag *ngFor="let role of user.roles" style="margin-left: 8px;">{{ role }}</nz-tag>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-content" #dashboardContent>
+    <app-widget-grid
+      *ngIf="activeLayout"
+      [widgets]="activeLayout.widgets"
+      [columns]="activeLayout.columns"
+      [editable]="true"
+      (drop)="onDrop($event)"
+      (removeWidget)="removeWidget($event)"
+      (configWidget)="configWidget($event)"
+      (exportWidget)="exportWidget($event)"
+    ></app-widget-grid>
+  </main>
+</div>

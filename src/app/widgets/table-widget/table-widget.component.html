@@ -1,0 +1,42 @@
+<div class="table-widget" *ngIf="!widgetData.loading && widgetData.data">
+  <nz-table 
+    [nzData]="getPageData()" 
+    [nzFrontPagination]="false"
+    [nzShowPagination]="false"
+    nzSize="small"
+    style="width: 100%;"
+  >
+    <thead>
+      <tr>
+        <th *ngFor="let col of widgetData.data.columns">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of getPageData()">
+        <td *ngFor="let cell of row">{{ cell }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  
+  <div class="table-pagination" *ngIf="getTotal() > this.pageSize">
+    <nz-pagination 
+      [nzPageIndex]="pageIndex" 
+      [nzPageSize]="pageSize" 
+      [nzTotal]="getTotal()"
+      [nzSize]="'small'"
+      (nzPageIndexChange)="pageIndex = $event"
+    ></nz-pagination>
+  </div>
+</div>
+
+<div class="table-loading" *ngIf="widgetData.loading">
+  <nz-skeleton [nzActive]="true" style="width: 100%;"></nz-skeleton>
+</div>
+
+<div class="table-error" *ngIf="widgetData.error">
+  <div class="error-icon">
+    <i nz-icon nzType="warning"></i>
+  </div>
+  <div class="error-text">数据加载失败</div>
+  <button nz-button nzSize="small" (click)="retry()">重试</button>
+</div>

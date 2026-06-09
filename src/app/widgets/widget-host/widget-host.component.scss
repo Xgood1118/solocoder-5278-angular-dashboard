@@ -1,0 +1,134 @@
+.widget-card {
+  position: relative;
+  background: var(--widget-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  border: 1px solid transparent;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .drag-handle {
+      opacity: 1;
+    }
+  }
+
+  &.alert-triggered {
+    border-color: #ff4d4f;
+    animation: alertPulse 2s infinite;
+  }
+
+  &.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+  }
+}
+
+@keyframes alertPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 79, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 77, 79, 0);
+  }
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--border-color, #f0f0f0);
+}
+
+.widget-title-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.widget-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #262626);
+  line-height: 1.4;
+}
+
+.widget-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-secondary, #8c8c8c);
+  line-height: 1.4;
+}
+
+.widget-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.widget-body {
+  flex: 1;
+  padding: 16px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.drag-handle {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  opacity: 0;
+  cursor: grab;
+  color: var(--text-tertiary, #bfbfbf);
+  padding: 8px 4px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    color: var(--text-secondary, #8c8c8c);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+:host-context(.density-compact) .widget-card {
+  .widget-header {
+    padding: 12px 16px 8px;
+  }
+
+  .widget-body {
+    padding: 12px 16px;
+  }
+
+  .widget-title {
+    font-size: 14px;
+  }
+}
+
+.theme-dark {
+  .widget-card {
+    background: #1f1f1f;
+    border-color: #303030;
+
+    .widget-header {
+      border-bottom-color: #303030;
+    }
+
+    .widget-title {
+      color: #e8e8e8;
+    }
+
+    .widget-subtitle {
+      color: #8c8c8c;
+    }
+  }
+}

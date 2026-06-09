@@ -1,0 +1,30 @@
+.richtext-widget {
+  height: 100%;
+  overflow-y: auto;
+  color: var(--text-primary, #262626);
+  font-size: 14px;
+  line-height: 1.6;
+
+  :deep(h1), :deep(h2), :deep(h3), :deep(h4) {
+    color: var(--text-primary, #262626);
+    margin-top: 0;
+  }
+
+  :deep(p) {
+    margin: 0 0 12px;
+  }
+
+  :deep(a) {
+    color: #1890ff;
+  }
+}
+
+.theme-dark {
+  .richtext-widget {
+    color: #e8e8e8;
+
+    :deep(h1), :deep(h2), :deep(h3), :deep(h4) {
+      color: #e8e8e8;
+    }
+  }
+}

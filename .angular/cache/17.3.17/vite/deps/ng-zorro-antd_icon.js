@@ -1,0 +1,34 @@
+import {
+  DEFAULT_TWOTONE_COLOR,
+  NZ_ICONS,
+  NZ_ICONS_PATCH,
+  NZ_ICONS_USED_BY_ZORRO,
+  NZ_ICON_DEFAULT_TWOTONE_COLOR,
+  NzIconDirective,
+  NzIconModule,
+  NzIconPatchService,
+  NzIconService
+} from "./chunk-IFO7ATFL.js";
+import "./chunk-LSRBXSW2.js";
+import "./chunk-5BZR2V47.js";
+import "./chunk-VIDVLXHN.js";
+import "./chunk-DK2OSQZY.js";
+import "./chunk-D3VVDDLJ.js";
+import "./chunk-7PTO3OCS.js";
+import "./chunk-BT5QD2DA.js";
+import "./chunk-4AJHPEBT.js";
+import "./chunk-DIXTE7KL.js";
+import "./chunk-IYAEADMW.js";
+import "./chunk-4MWRP73S.js";
+export {
+  DEFAULT_TWOTONE_COLOR,
+  NZ_ICONS,
+  NZ_ICONS_PATCH,
+  NZ_ICONS_USED_BY_ZORRO,
+  NZ_ICON_DEFAULT_TWOTONE_COLOR,
+  NzIconDirective,
+  NzIconModule,
+  NzIconPatchService,
+  NzIconService
+};
+//# sourceMappingURL=ng-zorro-antd_icon.js.map

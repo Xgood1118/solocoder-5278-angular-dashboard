@@ -1,0 +1,25 @@
+<div class="list-widget" *ngIf="!widgetData.loading && widgetData.data">
+  <ul class="item-list">
+    <li *ngFor="let item of widgetData.data.items" class="list-item" [ngClass]="getTypeClass(item.type)">
+      <div class="item-icon">
+        <i nz-icon [nzType]="getTypeIcon(item.type)"></i>
+      </div>
+      <div class="item-content">
+        <div class="item-title">{{ item.title }}</div>
+        <div class="item-time">{{ item.time }}</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="list-loading" *ngIf="widgetData.loading">
+  <nz-skeleton [nzActive]="true" style="width: 100%;"></nz-skeleton>
+</div>
+
+<div class="list-error" *ngIf="widgetData.error">
+  <div class="error-icon">
+    <i nz-icon nzType="warning"></i>
+  </div>
+  <div class="error-text">数据加载失败</div>
+  <button nz-button nzSize="small" (click)="retry()">重试</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="widget-grid" [ngClass]="getGridClass()" cdkDropList (cdkDropListDropped)="onDrop($event)">
+  <div
+    *ngFor="let widget of visibleWidgets; trackBy: trackById"
+    class="widget-item"
+    [ngStyle]="getWidgetStyle(widget)"
+    cdkDrag
+    [cdkDragDisabled]="!editable"
+    [cdkDragStartDelay]="200"
+  >
+    <div class="widget-placeholder" *cdkDragPlaceholder></div>
+    <app-widget-host
+      [widget]="widget"
+      [isDragging]="false"
+      (remove)="onRemove($event)"
+      (config)="onConfig($event)"
+      (export)="onExport($event)"
+    ></app-widget-host>
+  </div>
+</div>

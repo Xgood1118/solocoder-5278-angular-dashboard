@@ -1,0 +1,41 @@
+需求：Angular 后台仪表盘框架，图表 / 拖拽 / 主题 / 权限 / 导出 / 预警。
+
+背景：每个内部系统都要写一个"运营后台"，每次都从零搭太累。我们想做一个通用仪表盘框架：拖拽式布局、图表组件库、主题切换、权限控制（按角色显示不同卡片）、导出报表、定时刷新、阈值预警。技术栈 Angular + Angular CDK（拖拽）+ ng-zorro-antd（UI）+ ECharts（图表）。
+
+核心功能：
+- 仪表盘：网格布局（Angular CDK drag-drop），每用户保存自己的布局
+- 图表组件库：折线、柱状、饼、散点、雷达、漏斗、热力图、地图（中国地图 + 世界地图）
+- 卡片：KPI 数字卡、列表卡、表格卡、图表卡、富文本卡
+- 数据源：REST API 接入、Mock 数据、SQL 接入（mock）
+- 主题：light / dark / 紧凑 / 宽松；4 种强调色
+- 权限：不同角色看到不同卡片（如运营看 GMV、客服看工单数）
+- 实时刷新：卡片可设刷新间隔（10s / 30s / 1min / 5min），数据变化时数字滚动动画
+- 预警：设阈值（> N 报警），触发后卡片红边 + 声音 + 通知
+- 导出：整仪表盘 PDF / 单卡片 PNG / 数据 Excel
+- 模板：内置"销售看板 / 运营监控 / 风控大盘"模板
+
+涉及模块：
+- `src/app/dashboard/`：Dashboard、WidgetGrid、WidgetHost
+- `src/app/widgets/`：各类型 widget 组件（折线 / 柱状 / KPI / 表格）
+- `src/app/data/`：DataSource 服务、缓存、刷新调度
+- `src/app/auth/`：guards、role 解析、路由保护
+- `src/app/theme/`：主题服务、CSS variables
+- `src/app/export/`：PDF / PNG / Excel 导出器
+
+注意事项：
+- 拖拽用 Angular CDK 的 `cdkDrag`，drop list 用 `cdkDropList`；不要自己写 mouse event
+- 拖拽时显示占位（placeholder），松开后调用 `moveItemInArray` 重排
+- 布局存 localStorage + 服务端（用户登录后同步）
+- ECharts 实例要销毁（`echarts.dispose`），否则切换页面内存泄漏
+- ECharts 大数据（> 1万点）用 `dataset` + `large: true` 开启性能模式
+- 实时刷新用 RxJS `timer(0, interval)` + `switchMap` 拉数据
+- 卡片权限：路由守卫 + 组件级 `*ngIf="hasRole('admin')"`，不能只在 API 拦截
+- 预警阈值设到卡片的 config 里（不是硬编码），用户可调
+- 导出 PDF 用 jsPDF + html2canvas 截 ECharts（ECharts 实例 `getDataURL` 出图）
+- 导出 Excel 用 SheetJS 把数据转 .xlsx
+- 主题用 CSS variables 切换，Angular Material 用 mixin 覆盖
+- 卡片加载状态：skeleton（占位骨架屏）而不是 spinner
+- 卡片错误状态：友好提示 + 重试按钮
+- 路由懒加载：每个 widget 单独打包（loadChildren），首屏不卡
+- OnPush change detection：拖拽时不刷新其他卡片
+- 国际化 i18n：用 Angular i18n 或 ngx-translate，按 zh-CN / en-US 切换

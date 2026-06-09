@@ -1,0 +1,80 @@
+.kpi-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.kpi-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary, #262626);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.kpi-label {
+  font-size: 14px;
+  color: var(--text-secondary, #8c8c8c);
+  margin-bottom: 8px;
+}
+
+.kpi-trend {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &.trend-up {
+    color: #52c41a;
+  }
+
+  &.trend-down {
+    color: #ff4d4f;
+  }
+}
+
+.kpi-loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+
+  .error-icon {
+    font-size: 32px;
+    color: #ff4d4f;
+  }
+
+  .error-text {
+    color: var(--text-secondary, #8c8c8c);
+    font-size: 13px;
+  }
+}
+
+:host-context(.density-compact) .kpi-widget {
+  .kpi-value {
+    font-size: 28px;
+  }
+}
+
+.theme-dark {
+  .kpi-value {
+    color: #e8e8e8;
+  }
+
+  .kpi-label {
+    color: #8c8c8c;
+  }
+}

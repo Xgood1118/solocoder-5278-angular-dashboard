@@ -1,0 +1,15 @@
+<div class="chart-widget">
+  <div class="chart-container" #chartRef></div>
+  
+  <div class="chart-loading" *ngIf="widgetData.loading && !widgetData.data">
+    <nz-skeleton [nzActive]="true" style="width: 100%;"></nz-skeleton>
+  </div>
+
+  <div class="chart-error" *ngIf="widgetData.error">
+    <div class="error-icon">
+      <i nz-icon nzType="warning"></i>
+    </div>
+    <div class="error-text">数据加载失败</div>
+    <button nz-button nzSize="small" (click)="retry()">重试</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="widget-card" [class.alert-triggered]="isAlertTriggered" [class.dragging]="isDragging">
+  <div class="widget-header" *ngIf="widget.config.title || widget.config.subtitle">
+    <div class="widget-title-section">
+      <h3 class="widget-title" *ngIf="widget.config.title">{{ widget.config.title }}</h3>
+      <p class="widget-subtitle" *ngIf="widget.config.subtitle">{{ widget.config.subtitle }}</p>
+    </div>
+    <div class="widget-actions">
+      <button nz-button nzType="text" nzSize="small" nz-tooltip nzTooltipTitle="刷新" (click)="onRefresh()">
+        <i nz-icon nzType="reload"></i>
+      </button>
+      <button nz-button nzType="text" nzSize="small" nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+        <i nz-icon nzType="more"></i>
+      </button>
+    </div>
+  </div>
+  <div class="widget-body">
+    <ng-template #widgetContainer></ng-template>
+  </div>
+  <div class="drag-handle" cdkDragHandle>
+    <i nz-icon nzType="drag"></i>
+  </div>
+</div>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item (click)="onRefresh()">
+      <i nz-icon nzType="reload" style="margin-right: 8px;"></i>刷新数据
+    </li>
+    <li nz-menu-item (click)="onConfig()">
+      <i nz-icon nzType="setting" style="margin-right: 8px;"></i>设置
+    </li>
+    <li nz-menu-item (click)="onExport()">
+      <i nz-icon nzType="export" style="margin-right: 8px;"></i>导出
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item (click)="onRemove()" style="color: #ff4d4f;">
+      <i nz-icon nzType="delete" style="margin-right: 8px;"></i>移除
+    </li>
+  </ul>
+</nz-dropdown-menu>
